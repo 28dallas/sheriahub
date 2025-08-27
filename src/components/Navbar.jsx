@@ -18,7 +18,7 @@ import {
 import { Menu as MenuIcon, Gavel, Add, PersonAdd } from "@mui/icons-material";
 import ReportCaseForm from "./ReportCaseForm";
 import RegistrationForm from "./RegistrationForm";
-import LanguageToggle from "./LanguageToggle";
+import LanguageToggle from "./LanguageToggle"; // Import the LanguageToggle component
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -60,6 +60,7 @@ const Navbar = () => {
     { label: "Cases", path: "cases" },
     { label: "Profiles", path: "profiles" },
     { label: "Mediations", path: "mediations" },
+    { label: "Education", path: "education" }, // Add Education tab
   ];
 
   const drawer = (
@@ -174,7 +175,7 @@ const Navbar = () => {
                 {item.label}
               </Button>
             ))}
-            <LanguageToggle />
+            <LanguageToggle /> {/* Add the LanguageToggle component here */}
             <Button
               onClick={handleRegistrationFormOpen}
               variant="outlined"

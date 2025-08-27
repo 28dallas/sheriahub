@@ -68,11 +68,21 @@ export const LanguageProvider = ({ children }) => {
       editProfile: 'Edit Profile',
       saveChanges: 'Save Changes',
       cancel: 'Cancel',
+
+      // Education
+      education: 'Education',
+      progress: 'Progress',
+      modules: 'Modules',
+      submitNewRecord: 'Submit New Record',
+      recordSubmitted: 'Record submitted successfully!',
+      submissionError: 'Error submitting record.',
+      loading: 'Loading...',
+      markComplete: 'Mark as Complete',
+      completed: 'Completed',
       
       // Common
       saveSuccess: 'Profile updated successfully!',
       saveError: 'Failed to update profile. Please try again.',
-      loading: 'Loading...'
     },
     sw: {
       // Dashboard
@@ -115,11 +125,22 @@ export const LanguageProvider = ({ children }) => {
       editProfile: 'Hariri Wasifu',
       saveChanges: 'Hifadhi Mabadiliko',
       cancel: 'Futa',
+
+      // Education
+      education: 'Elimu',
+      progress: 'Maendeleo',
+      modules: 'Moduli',
+      submitNewRecord: 'Wasilisha Rekodi Mpya',
+      recordSubmitted: 'Rekodi imeshindwa kuwasilishwa!',
+      submissionError: 'Kosa la kuwasilisha rekodi.',
+      loading: 'Inapakia...',
+      markComplete: 'Weka kama Kamili',
+      completed: 'Imekamilika',
       
       // Common
       saveSuccess: 'Wasifu umehakikishiwa kwa mafanikio!',
       saveError: 'Imeshindwa kuhakikisha wasifu. Tafadhali jaribu tena.',
-      loading: 'Inapakia...'
+      loading: 'Inapakia...',
     },
     kik: {
       // Dashboard
@@ -162,11 +183,22 @@ export const LanguageProvider = ({ children }) => {
       editProfile: 'Hariri Ühoro',
       saveChanges: 'Hifadhi Mîtürüko',
       cancel: 'Thukia',
+
+      // Education
+      education: 'Elimu',
+      progress: 'Maendeleo',
+      modules: 'Moduli',
+      submitNewRecord: 'Wasilisha Rekodi Mpya',
+      recordSubmitted: 'Rekodi imeshindwa kuwasilishwa!',
+      submissionError: 'Kosa la kuwasilisha rekodi.',
+      loading: 'Inapakia...',
+      markComplete: 'Weka kama Kamili',
+      completed: 'Imekamilika',
       
       // Common
       saveSuccess: 'Ühoro ühakikiitwo!',
       saveError: 'Tügücitwo güthibita ühoro. Tafadhali ügerie ringi.',
-      loading: 'Ükinyïrïra...'
+      loading: 'Ükinyïrïra...',
     }
   };
 

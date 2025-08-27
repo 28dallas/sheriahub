@@ -13,6 +13,7 @@ import Cases from "./pages/Cases";
 import Mediations from "./pages/Mediations";
 import Profile from "./pages/Profile";
 import Dashboard from "./pages/Dashboard";
+import Education from "./pages/Education"; // Import the Education component
 
 function App() {
   const scrollToSection = (sectionId) => {
@@ -38,6 +39,7 @@ function App() {
             <Cases />
             <Mediations />
             <Profile />
+            <Education /> {/* Add the Education component */}
           </div>
           <Footer scrollToSection={scrollToSection} />
         </Router>
