@@ -8,24 +8,8 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Gavel, Person, Balance, ArrowDownward, Security } from "@mui/icons-material";
 import { motion } from "framer-motion";
-
-const theme = createTheme({
-  palette: {
-    primary: { main: "#FF0000" }, // Red
-    secondary: { main: "#008000" }, // Green
-    background: { default: "#FFFFFF" }, // White
-    text: { primary: "#000000", secondary: "#E2E8F0" }, // Black
-  },
-  typography: {
-    fontFamily: "'Roboto', sans-serif",
-    h2: { fontWeight: 700, letterSpacing: "0.05em", fontSize: "48px" },
-    h4: { fontWeight: 600, fontSize: "28px" },
-    body1: { fontSize: "18px", lineHeight: 1.6 },
-  },
-});
 
 const Home = ({ scrollToSection }) => {
   const features = [
@@ -52,19 +36,18 @@ const Home = ({ scrollToSection }) => {
   ];
 
   return (
-    <ThemeProvider theme={theme}>
-      <Box
-        id="home"
-        sx={{
-          minHeight: "100vh",
-          background: "linear-gradient(135deg, #1A365D 0%, #2B4A8A 100%)",
-          color: "white",
-          display: "flex",
-          alignItems: "center",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+    <Box
+      id="home"
+      sx={{
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #000000 0%, #D32F2F 20%, #2E7D32 60%)",
+        color: "white",
+        display: "flex",
+        alignItems: "center",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
             <Grid item xs={12} md={6}>
@@ -76,17 +59,17 @@ const Home = ({ scrollToSection }) => {
                 <Typography
                   variant="h2"
                   component="h1"
-                  sx={{ mb: 3, fontWeight: 700 }}
+                  sx={{ mb: 3, fontWeight: 700, color: "#FFFFFF" }}
                 >
-                  SheriaLink
+                  <Box component="span" sx={{ color: "#D32F2F" }}>Sheria</Box>Link
                   <br />
-                  <Box component="span" sx={{ color: "#D4A017" }}>
+                  <Box component="span" sx={{ color: "#2E7D32" }}>
                     SHARIA LINK HUB
                   </Box>
                 </Typography>
                 <Typography
                   variant="body1"
-                  sx={{ mb: 4, fontSize: "20px", opacity: 0.9 }}
+                  sx={{ mb: 4, fontSize: "20px", opacity: 0.9, color: "#FFFFFF" }}
                 >
                   Streamlining legal case management and mediation processes 
                   for efficient judicial administration. <br />
@@ -97,12 +80,12 @@ const Home = ({ scrollToSection }) => {
   variant="contained"
   size="large"
   sx={{
-    bgcolor: "#D4A017",
-    color: "#1A365D",
+    bgcolor: "#2E7D32",
+    color: "#FFFFFF",
     fontSize: "18px",
     padding: "12px 32px",
     "&:hover": {
-      bgcolor: "#C19B13",
+      bgcolor: "#1B5E20",
     },
   }}
   onClick={() => scrollToSection("about")}
@@ -125,7 +108,7 @@ const Home = ({ scrollToSection }) => {
                     backdropFilter: "blur(10px)",
                   }}
                 >
-                  <Typography variant="h4" sx={{ mb: 3, textAlign: "center" }}>
+                  <Typography variant="h4" sx={{ mb: 3, textAlign: "center", color: "#FFFFFF" }}>
                     Key Features
                   </Typography>
                   <Grid container spacing={2}>
@@ -195,7 +178,6 @@ const Home = ({ scrollToSection }) => {
           </Button>
         </motion.div>
       </Box>
-    </ThemeProvider>
   );
 };
 

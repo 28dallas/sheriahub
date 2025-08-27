@@ -16,23 +16,8 @@ import {
   Tooltip,
 } from "@mui/material";
 import { Menu as MenuIcon, Gavel, Add, PersonAdd } from "@mui/icons-material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import ReportCaseForm from "./ReportCaseForm";
 import RegistrationForm from "./RegistrationForm";
-
-const theme = createTheme({
-  palette: {
-    primary: { main: "#FF0000" }, // Red
-    secondary: { main: "#008000" }, // Green
-    background: { default: "#FFFFFF" }, // White
-    text: { primary: "#000000", secondary: "#E2E8F0" }, // Black
-  },
-  typography: {
-    fontFamily: "'Roboto', sans-serif",
-    h6: { fontWeight: 700, letterSpacing: "0.05em" },
-    button: { textTransform: "none", fontWeight: 500 },
-  },
-});
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -77,8 +62,8 @@ const Navbar = () => {
   ];
 
   const drawer = (
-      <div className="bg-gray-50 h-full p-4">
-      <Typography variant="h6" className="font-bold text-blue-900 mb-4">
+      <div style={{ backgroundColor: "#FFFFFF", height: "100%", padding: "16px" }}>
+      <Typography variant="h6" sx={{ fontWeight: 700, color: "#000000", mb: 4 }}>
         SHERIA LINK HUB
       </Typography>
       <List>
@@ -90,7 +75,13 @@ const Navbar = () => {
             to={item.path}
             smooth={true} // Enable smooth scrolling
             onClick={handleDrawerToggle}
-            className="text-blue-900 hover:bg-blue-50"
+            sx={{ 
+              color: "#000000",
+              "&:hover": {
+                backgroundColor: "rgba(46, 125, 50, 0.04)",
+                color: "#2E7D32"
+              }
+            }}
           >
             <ListItemText primary={item.label} />
           </ListItem>
@@ -101,8 +92,15 @@ const Navbar = () => {
             handleDrawerToggle();
             handleRegistrationFormOpen();
           }}
-          className="text-blue-900 hover:bg-blue-50"
-          sx={{ mt: 2, bgcolor: "#1A365D", color: "#E2E8F0", borderRadius: 1 }}
+          sx={{ 
+            mt: 2, 
+            bgcolor: "#000000", 
+            color: "#FFFFFF", 
+            borderRadius: 1,
+            "&:hover": {
+              bgcolor: "#2E7D32"
+            }
+          }}
         >
           <PersonAdd sx={{ mr: 1 }} />
           <ListItemText primary="Register" />
@@ -113,8 +111,15 @@ const Navbar = () => {
             handleDrawerToggle();
             handleReportFormOpen();
           }}
-          className="text-blue-900 hover:bg-blue-50"
-          sx={{ mt: 1, bgcolor: "#2E7D32", color: "#FFFFFF", borderRadius: 1 }}
+          sx={{ 
+            mt: 1, 
+            bgcolor: "#2E7D32", 
+            color: "#FFFFFF", 
+            borderRadius: 1,
+            "&:hover": {
+              bgcolor: "#1B5E20"
+            }
+          }}
         >
           <Add sx={{ mr: 1 }} />
           <ListItemText primary="Report Case" />
@@ -124,11 +129,11 @@ const Navbar = () => {
   );
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <AppBar
         position="fixed"
         sx={{
-          background: "#D52B1E", // Red for the navbar background
+          background: "#000000", // Black navbar background
           boxShadow: "none", // Remove shadow for a cleaner look
         }}
       >
@@ -138,14 +143,14 @@ const Navbar = () => {
               color="inherit"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ display: { sm: "none" } }}
+              sx={{ display: { sm: "none" }, color: "#FFFFFF" }}
             >
               <MenuIcon />
             </IconButton>
-            <Gavel sx={{ mr: 1, color: "#D4A017" }} />
+            <Gavel sx={{ mr: 1, color: "#2E7D32" }} />
             <Typography
               variant="h6"
-              sx={{ color: "#E2E8F0", fontWeight: 700 }}
+              sx={{ color: "#FFFFFF", fontWeight: 700 }}
             >
               Judiciary Dashboard
             </Typography>
@@ -158,10 +163,10 @@ const Navbar = () => {
                 to={item.path}
                 smooth={true} // Enable smooth scrolling
                 sx={{
-                  color: "#E2E8F0",
+                  color: "#FFFFFF",
                   "&:hover": {
-                    backgroundColor: "rgba(212, 160, 23, 0.1)",
-                    color: "#D4A017",
+                    backgroundColor: "rgba(46, 125, 50, 0.1)",
+                    color: "#2E7D32",
                   },
                 }}
               >
@@ -173,14 +178,14 @@ const Navbar = () => {
               variant="outlined"
               startIcon={<PersonAdd />}
               sx={{
-                borderColor: "#E2E8F0",
-                color: "#E2E8F0",
+                borderColor: "#FFFFFF",
+                color: "#FFFFFF",
                 fontWeight: 600,
                 ml: 2,
                 "&:hover": {
-                  borderColor: "#D4A017",
-                  backgroundColor: "rgba(212, 160, 23, 0.1)",
-                  color: "#D4A017",
+                  borderColor: "#2E7D32",
+                  backgroundColor: "rgba(46, 125, 50, 0.1)",
+                  color: "#2E7D32",
                 },
               }}
             >
@@ -205,7 +210,7 @@ const Navbar = () => {
           </div>
           <Tooltip title="User Profile">
             <IconButton onClick={handleProfileMenuOpen}>
-              <Avatar sx={{ bgcolor: "#D4A017", color: "#1A365D" }}>U</Avatar>
+              <Avatar sx={{ bgcolor: "#2E7D32", color: "#FFFFFF" }}>U</Avatar>
             </IconButton>
           </Tooltip>
           <Menu
@@ -238,7 +243,7 @@ const Navbar = () => {
         open={registrationFormOpen} 
         onClose={handleRegistrationFormClose} 
       />
-    </ThemeProvider>
+    </>
   );
 };
 

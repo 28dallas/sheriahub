@@ -1,5 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
+import theme from "./theme";
 import Navbar from "./components/Navbar";
 import EnvTest from "./components/EnvTest"; // Importing the EnvTest component
 import Footer from "./components/Footer";
@@ -20,16 +23,19 @@ function App() {
   };
 
   return (
-    <Router>
-      <Navbar />
-      <div style={{ padding: "0", margin: "0" }}> {/* Adjusted padding and margin */}
-        <Home scrollToSection={scrollToSection} />
-        <AboutUs />
-        <Cases />
-        <Mediations />
-      </div>
-      <Footer scrollToSection={scrollToSection} />
-    </Router>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Navbar />
+        <div style={{ padding: "0", margin: "0" }}> {/* Adjusted padding and margin */}
+          <Home scrollToSection={scrollToSection} />
+          <AboutUs />
+          <Cases />
+          <Mediations />
+        </div>
+        <Footer scrollToSection={scrollToSection} />
+      </Router>
+    </ThemeProvider>
   );
 }
 

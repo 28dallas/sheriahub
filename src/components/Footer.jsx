@@ -8,27 +8,13 @@ import {
   Link,
   IconButton,
 } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Phone, Email, LocationOn, Facebook, Twitter, LinkedIn } from "@mui/icons-material";
-
-const theme = createTheme({
-  palette: {
-    primary: { main: "#1A365D" },
-    secondary: { main: "#D4A017" },
-    background: { default: "#1A365D" },
-    text: { primary: "#FFFFFF", secondary: "#E2E8F0" },
-  },
-  typography: {
-    fontFamily: "'Roboto', sans-serif",
-    h6: { fontWeight: 600, fontSize: "18px" },
-    body2: { fontSize: "14px", color: "#E2E8F0" },
-  },
-});
 
 const Footer = ({ scrollToSection }) => {
   const footerSections = [
     {
       title: "Quick Links",
+      titleColor: "#2E7D32",
       links: [
         { label: "Home", action: () => scrollToSection("home") },
         { label: "Cases", action: () => scrollToSection("cases") },
@@ -39,14 +25,16 @@ const Footer = ({ scrollToSection }) => {
     },
     {
       title: "Contact Info",
+      titleColor: "#D32F2F",
       items: [
-        { icon: <Phone sx={{ fontSize: 18 }} />, text: "+254 XXX XXX XXX" },
-        { icon: <Email sx={{ fontSize: 18 }} />, text: "info@judiciary.go.ke" },
-        { icon: <LocationOn sx={{ fontSize: 18 }} />, text: "Nairobi, Kenya" },
+        { icon: <Phone sx={{ fontSize: 18, color: "#2E7D32" }} />, text: "+254 XXX XXX XXX" },
+        { icon: <Email sx={{ fontSize: 18, color: "#2E7D32" }} />, text: "info@judiciary.go.ke" },
+        { icon: <LocationOn sx={{ fontSize: 18, color: "#2E7D32" }} />, text: "Nairobi, Kenya" },
       ],
     },
     {
       title: "Connect With Us",
+      titleColor: "#2E7D32",
       social: [
         { icon: <Facebook />, label: "Facebook", url: "#" },
         { icon: <Twitter />, label: "Twitter", url: "#" },
@@ -56,18 +44,16 @@ const Footer = ({ scrollToSection }) => {
   ];
 
   return (
-    <ThemeProvider theme={theme}>
-      <Box
-        component="footer"
-        sx={{
-          bgcolor: "background.default",
-          color: "text.primary",
-          py: 6,
-          px: { xs: 2, sm: 4 },
-          borderTop: "4px solid",
-          borderColor: "secondary.main",
-        }}
-      >
+    <Box
+      component="footer"
+      sx={{
+        background: "linear-gradient(135deg, #000000 0%, #D32F2F 15%, #000000 40%, #2E7D32 85%)",
+        color: "#FFFFFF",
+        py: 6,
+        px: { xs: 2, sm: 4 },
+        borderTop: "4px solid #D32F2F",
+      }}
+    >
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             {footerSections.map((section, index) => (
@@ -75,7 +61,7 @@ const Footer = ({ scrollToSection }) => {
                 <Box>
                   <Typography
                     variant="h6"
-                    sx={{ mb: 3, color: "secondary.main" }}
+                    sx={{ mb: 3, color: section.titleColor }}
                   >
                     {section.title}
                   </Typography>
@@ -88,11 +74,11 @@ const Footer = ({ scrollToSection }) => {
                           onClick={link.action}
                           sx={{
                             justifyContent: "flex-start",
-                            color: "text.secondary",
+                            color: "#FFFFFF",
                             textTransform: "none",
                             fontSize: "14px",
                             "&:hover": {
-                              color: "secondary.main",
+                              color: "#2E7D32",
                               backgroundColor: "transparent",
                             },
                           }}
@@ -110,10 +96,10 @@ const Footer = ({ scrollToSection }) => {
                           key={itemIndex}
                           sx={{ display: "flex", alignItems: "center", gap: 1 }}
                         >
-                          <Box sx={{ color: "secondary.main" }}>
+                          <Box>
                             {item.icon}
                           </Box>
-                          <Typography variant="body2">
+                          <Typography variant="body2" sx={{ color: "#FFFFFF" }}>
                             {item.text}
                           </Typography>
                         </Box>
@@ -131,10 +117,10 @@ const Footer = ({ scrollToSection }) => {
                           target="_blank"
                           rel="noopener noreferrer"
                           sx={{
-                            color: "text.secondary",
+                            color: "#FFFFFF",
                             "&:hover": {
-                              color: "secondary.main",
-                              backgroundColor: "rgba(212, 160, 23, 0.1)",
+                              color: "#2E7D32",
+                              backgroundColor: "rgba(46, 125, 50, 0.1)",
                             },
                           }}
                         >
@@ -160,21 +146,21 @@ const Footer = ({ scrollToSection }) => {
           >
             <Typography
               variant="h6"
-              sx={{ mb: 2, color: "secondary.main" }}
+              sx={{ mb: 2, color: "#2E7D32" }}
             >
-              Access Services via USSD
+              Access Services via <Box component="span" sx={{ color: "#D32F2F" }}>USSD</Box>
             </Typography>
             <Button
               variant="contained"
               startIcon={<Phone />}
               sx={{
-                bgcolor: "secondary.main",
-                color: "primary.main",
+                bgcolor: "#2E7D32",
+                color: "#FFFFFF",
                 fontSize: "16px",
                 padding: "12px 24px",
                 borderRadius: 2,
                 "&:hover": {
-                  bgcolor: "#C19B13",
+                  bgcolor: "#1B5E20",
                   transform: "translateY(-2px)",
                 },
               }}
@@ -187,7 +173,7 @@ const Footer = ({ scrollToSection }) => {
             </Button>
             <Typography
               variant="body2"
-              sx={{ mt: 2, color: "text.secondary" }}
+              sx={{ mt: 2, color: "#FFFFFF" }}
             >
               Dial *384# from your mobile phone to access our services
             </Typography>
@@ -203,16 +189,15 @@ const Footer = ({ scrollToSection }) => {
               textAlign: "center",
             }}
           >
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              © 2024 Judiciary Dashboard. All rights reserved.
+            <Typography variant="body2" sx={{ color: "#FFFFFF" }}>
+              © 2024 <Box component="span" sx={{ color: "#D32F2F" }}>Judiciary</Box> Dashboard. All rights reserved.
             </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary", mt: 1 }}>
+            <Typography variant="body2" sx={{ color: "#FFFFFF", mt: 1 }}>
               Designed for efficient judicial administration and public service.
             </Typography>
           </Box>
         </Container>
       </Box>
-    </ThemeProvider>
   );
 };
 
