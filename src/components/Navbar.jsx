@@ -18,6 +18,7 @@ import {
 import { Menu as MenuIcon, Gavel, Add, PersonAdd } from "@mui/icons-material";
 import ReportCaseForm from "./ReportCaseForm";
 import RegistrationForm from "./RegistrationForm";
+import LanguageToggle from "./LanguageToggle";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -152,7 +153,7 @@ const Navbar = () => {
               variant="h6"
               sx={{ color: "#FFFFFF", fontWeight: 700 }}
             >
-              Judiciary Dashboard
+              
             </Typography>
           </div>
           <div className="hidden sm:flex space-x-4 items-center">
@@ -173,6 +174,7 @@ const Navbar = () => {
                 {item.label}
               </Button>
             ))}
+            <LanguageToggle />
             <Button
               onClick={handleRegistrationFormOpen}
               variant="outlined"

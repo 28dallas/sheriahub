@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import theme from "./theme";
+import { LanguageProvider } from "./contexts/LanguageContext";
 import Navbar from "./components/Navbar";
 import EnvTest from "./components/EnvTest"; // Importing the EnvTest component
 import Footer from "./components/Footer";
@@ -10,6 +11,8 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Cases from "./pages/Cases";
 import Mediations from "./pages/Mediations";
+import Profile from "./pages/Profile";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const scrollToSection = (sectionId) => {
@@ -23,19 +26,23 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Router>
-        <Navbar />
-        <div style={{ padding: "0", margin: "0" }}> {/* Adjusted padding and margin */}
-          <Home scrollToSection={scrollToSection} />
-          <AboutUs />
-          <Cases />
-          <Mediations />
-        </div>
-        <Footer scrollToSection={scrollToSection} />
-      </Router>
-    </ThemeProvider>
+    <LanguageProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Router>
+          <Navbar />
+          <div style={{ padding: "0", margin: "0" }}> {/* Adjusted padding and margin */}
+            <Home scrollToSection={scrollToSection} />
+            <Dashboard />
+            <AboutUs />
+            <Cases />
+            <Mediations />
+            <Profile />
+          </div>
+          <Footer scrollToSection={scrollToSection} />
+        </Router>
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }
 
