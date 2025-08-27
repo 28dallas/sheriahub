@@ -92,7 +92,7 @@ export const getConfig = () => ({
   ussdCode: process.env.REACT_APP_USSD_CODE || "*384*00#",
   appName: process.env.REACT_APP_APP_NAME || "SheriaLink Dashboard",
   supportEmail: process.env.REACT_APP_SUPPORT_EMAIL || "support@sherialink.go.ke",
-  supportPhone: process.env.REACT_APP_SUPPORT_PHONE || "+254XXXXXXXXX",
+  supportPhone: process.env.REACT_APP_SUPPORT_PHONE || "+254 719 732842",
 });
 
 export default API;

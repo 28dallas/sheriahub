@@ -15,21 +15,8 @@ import {
   FormControl,
   InputLabel,
 } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Gavel, Close } from "@mui/icons-material";
 import { motion } from "framer-motion";
-
-const theme = createTheme({
-  palette: {
-    primary: { main: "#1A365D" },
-    secondary: { main: "#D4A017" },
-    error: { main: "#D32F2F" },
-    success: { main: "#2E7D32" },
-  },
-  typography: {
-    fontFamily: "'Roboto', sans-serif",
-  },
-});
 
 const ReportCaseForm = ({ open, onClose }) => {
   const [formData, setFormData] = useState({
@@ -150,42 +137,41 @@ Case ID: ${caseResponse._id || 'Generated'}`;
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Dialog
-        open={open}
-        onClose={onClose}
-        maxWidth="md"
-        fullWidth
-        PaperProps={{
-          sx: {
-            borderRadius: 3,
-            boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-          },
+    <Dialog
+      open={open}
+      onClose={onClose}
+      maxWidth="md"
+      fullWidth
+      PaperProps={{
+        sx: {
+          borderRadius: 3,
+          boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+        },
+      }}
+    >
+      <DialogTitle
+        sx={{
+          background: "linear-gradient(135deg, #000000 0%, #D32F2F 10%, #000000 35%, #2E7D32 80%)",
+          color: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          p: 3,
         }}
       >
-        <DialogTitle
-          sx={{
-            background: "linear-gradient(135deg, #1A365D 0%, #2B4A8A 100%)",
-            color: "white",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            p: 3,
-          }}
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Gavel sx={{ mr: 2, color: "#2E7D32" }} />
+          <Typography variant="h5" sx={{ fontWeight: 600, color: "#FFFFFF" }}>
+            Report a <Box component="span" sx={{ color: "#D32F2F" }}>Case</Box>
+          </Typography>
+        </Box>
+        <Button
+          onClick={onClose}
+          sx={{ color: "white", minWidth: "auto", p: 1 }}
         >
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Gavel sx={{ mr: 2, color: "#D4A017" }} />
-            <Typography variant="h5" sx={{ fontWeight: 600 }}>
-              Report a Case
-            </Typography>
-          </Box>
-          <Button
-            onClick={onClose}
-            sx={{ color: "white", minWidth: "auto", p: 1 }}
-          >
-            <Close />
-          </Button>
-        </DialogTitle>
+          <Close />
+        </Button>
+      </DialogTitle>
 
         <DialogContent sx={{ p: 4 }}>
           {success && (
@@ -295,11 +281,12 @@ Case ID: ${caseResponse._id || 'Generated'}`;
             onClick={onClose}
             variant="outlined"
             sx={{
-              borderColor: "#1A365D",
-              color: "#1A365D",
+              borderColor: "#000000",
+              color: "#000000",
               "&:hover": {
-                borderColor: "#2B4A8A",
-                backgroundColor: "rgba(26, 54, 93, 0.04)",
+                borderColor: "#2E7D32",
+                backgroundColor: "rgba(46, 125, 50, 0.04)",
+                color: "#2E7D32",
               },
             }}
           >
@@ -310,12 +297,12 @@ Case ID: ${caseResponse._id || 'Generated'}`;
             variant="contained"
             disabled={!isFormValid() || loading}
             sx={{
-              bgcolor: "#D4A017",
-              color: "#1A365D",
+              bgcolor: "#2E7D32",
+              color: "#FFFFFF",
               fontWeight: 600,
               px: 4,
               "&:hover": {
-                bgcolor: "#C19B13",
+                bgcolor: "#1B5E20",
               },
               "&:disabled": {
                 bgcolor: "#E0E0E0",
@@ -324,14 +311,13 @@ Case ID: ${caseResponse._id || 'Generated'}`;
             }}
           >
             {loading ? (
-              <CircularProgress size={20} sx={{ color: "#1A365D" }} />
+              <CircularProgress size={20} sx={{ color: "#FFFFFF" }} />
             ) : (
               "Submit via USSD"
             )}
           </Button>
         </DialogActions>
       </Dialog>
-    </ThemeProvider>
   );
 };
 

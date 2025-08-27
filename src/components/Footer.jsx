@@ -27,7 +27,7 @@ const Footer = ({ scrollToSection }) => {
       title: "Contact Info",
       titleColor: "#D32F2F",
       items: [
-        { icon: <Phone sx={{ fontSize: 18, color: "#2E7D32" }} />, text: "+254 XXX XXX XXX" },
+        { icon: <Phone sx={{ fontSize: 18, color: "#2E7D32" }} />, text: "+254 719 732842" },
         { icon: <Email sx={{ fontSize: 18, color: "#2E7D32" }} />, text: "info@judiciary.go.ke" },
         { icon: <LocationOn sx={{ fontSize: 18, color: "#2E7D32" }} />, text: "Nairobi, Kenya" },
       ],
