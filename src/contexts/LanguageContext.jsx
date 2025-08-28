@@ -140,7 +140,6 @@ export const LanguageProvider = ({ children }) => {
       // Common
       saveSuccess: 'Wasifu umehakikishiwa kwa mafanikio!',
       saveError: 'Imeshindwa kuhakikisha wasifu. Tafadhali jaribu tena.',
-      loading: 'Inapakia...',
     },
     kik: {
       // Dashboard
@@ -198,7 +197,6 @@ export const LanguageProvider = ({ children }) => {
       // Common
       saveSuccess: 'Ühoro ühakikiitwo!',
       saveError: 'Tügücitwo güthibita ühoro. Tafadhali ügerie ringi.',
-      loading: 'Ükinyïrïra...',
     }
   };
 

@@ -66,7 +66,7 @@ const Navbar = () => {
   const drawer = (
       <div style={{ backgroundColor: "#FFFFFF", height: "100%", padding: "16px" }}>
       <Typography variant="h6" sx={{ fontWeight: 700, color: "#000000", mb: 4 }}>
-        SHERIA LINK HUB
+        SHARIA LINK HUB
       </Typography>
       <List>
         {navItems.map((item) => (

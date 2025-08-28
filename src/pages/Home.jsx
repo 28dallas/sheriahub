@@ -61,7 +61,7 @@ const Home = ({ scrollToSection }) => {
                   component="h1"
                   sx={{ mb: 3, fontWeight: 700, color: "#FFFFFF" }}
                 >
-                  <Box component="span" sx={{ color: "#D32F2F" }}>Sheria</Box>Link
+                  <Box component="span" sx={{ color: "#D32F2F" }}>Sharia</Box>Link
                   <br />
                   <Box component="span" sx={{ color: "#2E7D32" }}>
                     SHARIA LINK HUB

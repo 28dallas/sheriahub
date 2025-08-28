@@ -90,8 +90,8 @@ export const getConfig = () => ({
   africastalkingUsername: AFRICASTALKING_USERNAME,
   africastalkingEnvironment: AFRICASTALKING_ENVIRONMENT,
   ussdCode: process.env.REACT_APP_USSD_CODE || "*384*00#",
-  appName: process.env.REACT_APP_APP_NAME || "SheriaLink Dashboard",
-  supportEmail: process.env.REACT_APP_SUPPORT_EMAIL || "support@sherialink.go.ke",
+  appName: process.env.REACT_APP_APP_NAME || "ShariaLink Dashboard",
+  supportEmail: process.env.REACT_APP_SUPPORT_EMAIL || "support@sharialink.go.ke",
   supportPhone: process.env.REACT_APP_SUPPORT_PHONE || "+254 719 732842",
 });
 

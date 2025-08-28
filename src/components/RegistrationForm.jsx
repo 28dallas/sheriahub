@@ -188,7 +188,7 @@ const RegistrationForm = ({ open, onClose }) => {
               transition={{ duration: 0.5 }}
             >
               <Alert severity="success" sx={{ mb: 3 }}>
-                Registration successful! Welcome to SheriaLink. You can now report cases and track your submissions.
+                Registration successful! Welcome to ShariaLink. You can now report cases and track your submissions.
               </Alert>
             </motion.div>
           )}

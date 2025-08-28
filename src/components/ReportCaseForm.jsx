@@ -86,7 +86,7 @@ const ReportCaseForm = ({ open, onClose }) => {
       const caseResponse = await createCase(caseData);
 
       // Prepare USSD message
-      const ussdMessage = `${config.ussdCode} - SheriaLink Case Report:
+      const ussdMessage = `${config.ussdCode} - ShariaLink Case Report:
 Name: ${formData.fullName}
 Type: ${formData.reporting}
 Location: ${formData.location}

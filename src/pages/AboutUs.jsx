@@ -15,7 +15,7 @@ const AboutUs = () => {
       icon: <Groups sx={{ fontSize: 48, color: "secondary.main" }} />,
       title: "Our Mission",
       titleColor: "#000000",
-      content: "Sheria Link Hub is a digital platform designed to bridge the gap between citizens, government institutions, and relevant authorities, fostering a transparent, accountable, and responsive justice system."
+      content: "Sharia Link Hub is a digital platform designed to bridge the gap between citizens, government institutions, and relevant authorities, fostering a transparent, accountable, and responsive justice system."
     },
     {
       icon: <History sx={{ fontSize: 48, color: "#D32F2F" }} />,
